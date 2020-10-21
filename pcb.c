@@ -26,6 +26,7 @@ PcbPtr createnullPcb()
     new_process_Ptr->remaining_cpu_time = 0;
     new_process_Ptr->status = PCB_UNINITIALIZED;
     new_process_Ptr->next = NULL;
+    new_process_Ptr->tq = 0;
     return new_process_Ptr;
 }
 

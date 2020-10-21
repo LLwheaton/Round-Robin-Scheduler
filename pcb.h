@@ -36,6 +36,7 @@ struct pcb {
     int arrival_time;
     int service_time;
     int remaining_cpu_time;
+    int tq; //counts up to time quantum
     int status;
     struct pcb * next;
 };

@@ -6,6 +6,8 @@
 // Include files
 #include "RRD.h"
 
+//NOTE: git push origin master
+
 int main(int argc, char **argv) {
 
   // Declarations
@@ -24,7 +26,7 @@ int main(int argc, char **argv) {
   int sum_tt = 0;
   int sum_wt = 0;
   int time_quantum;
-  int counter = 0;
+  //int counter = 0;
 
 
   // Error checking (from Exercise 3)
@@ -94,7 +96,9 @@ int main(int argc, char **argv) {
     if(current_process) {
       //printf("ii\n");
       // (a) decrease remaining cpu time
+      current_process->tq++;
       current_process->remaining_cpu_time--;
+
 
       // (b) if times up
       if(current_process->remaining_cpu_time <= 0) {
@@ -120,7 +124,7 @@ int main(int argc, char **argv) {
       //      think i need to handle time quantum here
       } else if(round_robin_queue) {
         //printf("c\n");
-        if(counter >= time_quantum) {
+        if(current_process->tq >= time_quantum) {
           //printf("c..\n");
           //send SIGTSTP to suspend current process
           transfer_process = suspendPcb(current_process);
@@ -128,7 +132,8 @@ int main(int argc, char **argv) {
           round_robin_queue = enqPcb(round_robin_queue, transfer_process);
           current_process = deqPcb(&round_robin_queue);
           startPcb(current_process);
-          counter = 0;
+          current_process->tq = 0;
+          //counter = 0;
         }
 
 
@@ -165,7 +170,7 @@ int main(int argc, char **argv) {
     timer++;
 
     //increase counter
-    counter++;
+    //counter++;
 
     // (vi) go back to 4
 
