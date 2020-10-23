@@ -83,7 +83,7 @@ int main(int argc, char **argv) {
   while(current_process || (job_dispatch_queue || round_robin_queue)) {
     //printf("4\n");
     // (i) Unload any arrived pending processes from job q to rr q
-    if(job_dispatch_queue && job_dispatch_queue->arrival_time == timer) {
+    if(job_dispatch_queue && job_dispatch_queue->arrival_time <= timer) {
       // Dequeue from Job Dispatch and Enqueue to Round Robin
       //printf("dq from jdq at time %d\n", timer);
       process_init_rr = deqPcb(&job_dispatch_queue);
@@ -158,6 +158,7 @@ int main(int argc, char **argv) {
         startPcb(transfer_process); //****
 
       }
+      transfer_process->tq = 0;
       // (d) set process as currently running process
       //printf("starting process!\n");
       //startPcb(current_process);
