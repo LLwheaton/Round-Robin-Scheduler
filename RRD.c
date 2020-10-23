@@ -115,8 +115,9 @@ int main(int argc, char **argv) {
         num_processes++;
 
         //set current process to null
+        free(current_process);
         current_process = NULL;
-        //free(current_process);
+
 
 
 

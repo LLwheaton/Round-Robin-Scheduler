@@ -99,9 +99,9 @@ PcbPtr startPcb (PcbPtr p)
     else  // already started, so continue
     {
         //Print pcb information
-        printPcbHdr(); //added
-        printPcb(p); //added
-        fflush(stdout); //added
+        // printPcbHdr(); //added
+        // printPcb(p); //added
+        // fflush(stdout); //added
         kill(p->pid, SIGCONT);
     }
     p->status = PCB_RUNNING;
