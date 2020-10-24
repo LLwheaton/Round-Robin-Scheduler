@@ -12,6 +12,9 @@ all: $(TARGET)
 $(TARGET): $(TARGET).c
 	$(CC) $(CFLAGS) -o $(TARGET) $(TARGET).c $(OTHER).c $(EXTRA)
 
+process: sigtrap.c
+	$(CC) -o process sigtrap.c
+
 # Clean up files if clean is given
 clean:
 	rm $(TARGET)

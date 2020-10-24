@@ -26,6 +26,7 @@ PcbPtr createnullPcb()
     new_process_Ptr->remaining_cpu_time = 0;
     new_process_Ptr->status = PCB_UNINITIALIZED;
     new_process_Ptr->next = NULL;
+    // Added for assignment 2 - tq counts up to time_quantum
     new_process_Ptr->tq = 0;
     return new_process_Ptr;
 }
@@ -135,7 +136,7 @@ PcbPtr terminatePcb(PcbPtr p)
 
 //////////////////////////////////////////////////////////
 // PcbPtr suspendPcb(PcbPtr process) - suspend a process
-// returns: PcbPtr of process ?
+// returns: PcbPtr of process
 ///////////////////////////////////////////////////////////
 PcbPtr suspendPcb(PcbPtr p) {
   //recall that the kill() function can send signals
