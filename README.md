@@ -15,8 +15,9 @@ Each line of this file contains a job, giving the <arrival time> and <cpu time>
 
 
 
-##To run the program:
-
+## To run the program:
+- Run with Linux terminal or WSL
+- Navigate to root folder
 - "make process"
 - "make"
 - "./RRD joblist.txt"
