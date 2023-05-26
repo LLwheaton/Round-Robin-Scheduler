@@ -15,7 +15,7 @@ After the jobs have completed, the program prints out two things:
 - Average waiting time
 
 ## joblist.txt file
-Each line of this file contains a job, giving the <arrival time> and <cpu time>
+Each line of this file contains a job, giving the arrival time and cpu time
 
 
 
