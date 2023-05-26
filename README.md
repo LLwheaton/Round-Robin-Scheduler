@@ -10,6 +10,10 @@ The Round Robin queue operates with a specified time quantum, which is determine
 
 In the first case, the process is terminated, and in the second case, the process is preempted (suspended) and moved to the end of the Round Robin queue. The dispatcher immediately schedules another job from the Round Robin queue for execution if there are other jobs that have arrived or are suspended, once the currently running process is terminated or suspended.
 
+After the jobs have completed, the program prints out two things:
+- Average turn around time
+- Average waiting time
+
 ## joblist.txt file
 Each line of this file contains a job, giving the <arrival time> and <cpu time>
 
