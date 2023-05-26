@@ -1,4 +1,5 @@
-#Round Robin Dispatcher
+# Round Robin Dispatcher
+
 This program gives a list of randomly generated jobs (joblist.txt) that need to be scheduled for execution based on their arrival time and allowed execution time. Each job has a specific time quantum, and once that time is reached, the job is preempted and moved back to the queue if it hasn't finished yet and there are other waiting jobs.
 
 Initially, all the jobs are loaded into the Job Dispatch queue. When a job "arrives," it is moved from the Job Dispatch queue to the Round Robin queue. Whenever there is no currently running process, the job at the front of the Round Robin queue is either launched as a new process (if it hasn't started running) or resumed (if it was suspended).
